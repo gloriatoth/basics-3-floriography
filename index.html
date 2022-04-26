@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floriography 💐</title>
+    <style>
+      body {
+        background: linear-gradient(
+          179.4deg,
+          rgb(253, 240, 233) 2.2%,
+          rgb(255, 194, 203) 96.2%
+        );
+        background-repeat: no-repeat;
+        height: 100%;
+        margin: 0;
+        font-family: "Trebuchet MS", sans-serif;
+      }
+      h1 {
+        color: #c9356c;
+        font-family: "Brush Script MT", cursive;
+        font-size: 52px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      h2 {
+        color: #f48db4;
+        font-family: "Courier New", monospace;
+        font-size: 32px;
+        text-align: center;
+        font-weight: 200;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      hr {
+        max-width: 50%;
+      }
+
+      .buy-button {
+        color: white;
+        padding: 10px 15px;
+        background-color: #f0ab8d;
+        font-family: Helvetica, sans-serif;
+        font-size: 18px;
+        transition: all 200ms ease-in-out;
+        border: none;
+        border-radius: 4px;
+      }
+
+      .buy-button:hover {
+        background-color: #ffcab0;
+      }
+
+      footer {
+        text-align: center;
+        color: white;
+        margin: 20px 0;
+      }
+
+      a {
+        color: white;
+      }
+
+      .header {
+        height: 250px;
+        width: 100%;
+      }
+
+      .intro {
+        background-color: #ffe9e3;
+        border-radius: 8px;
+        border: 2px solid #ffcab0;
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+        color: #379956;
+        padding: 25px 75px;
+        max-width: 40%;
+        margin: 20px auto;
+        line-height: 1.3;
+      }
+
+      .quiz {
+        background-color: #ffe9e3;
+        border-radius: 8px;
+        border: 2px solid #ffcab0;
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+        color: #4c9173;
+        padding: 25px 75px;
+        max-width: 40%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .text-yellow {
+        color: #d1a535;
+      }
+
+      .text-red {
+        color: #bc2525;
+      }
+
+      .text-pink {
+        color: #fda4cf;
+      }
+
+      .text-white {
+        color: white;
+      }
+
+      .text-black {
+        color: #352f44;
+      }
+
+      .quote {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="Floriography.jpg" alt="Flowers" />
+    </div>
+    <h1>Language of Flowers</h1>
+
+    <div class="intro">
+      <h2>
+        Meanings
+        <br />
+        🌷🌻🌹
+      </h2>
+      <p>
+        The significance assigned to specific flowers in Western culture varied
+        — nearly every flower had multiple associations, listed in the hundreds
+        of floral dictionaries — but a consensus of meaning for common blooms
+        has emerged. <br />
+        Often, definitions derive from the appearance or behavior of the plant
+        itself. For example, the <span class="text-yellow">mimosa</span>, or
+        sensitive plant, represents chastity. This is because the leaves of the
+        mimosa close at night, or when touched. Likewise, the
+        <span class="text-red">deep red rose</span> and its thorns have been
+        used to symbolize the intensity of romantic love.
+        <span class="text-pink">Pink roses</span> imply a lesser affection,
+        <span class="text-white">white roses</span> suggest virtue and chastity,
+        and <span class="text-yellow">yellow roses</span> stand for friendship
+        or devotion. The <span class="text-black">black rose</span> (actually a
+        very dark shade of red, purple, or maroon) has a long association with
+        death and dark magic.
+      </p>
+      <hr />
+      <p class="quote">
+        <em>
+          "A woman also had to be pretty precise about where she wore flowers.
+          Say, for instance, a suitor had sent her a tussie-mussie (a.k.a.
+          nosegay). If she pinned it to the 'cleavage of bosom', that would be
+          bad news for him, since that signified <strong>friendship</strong>.
+          Ah, but if she pinned it over her heart, 'That was an unambiguous
+          declaration of <strong>love</strong></em
+        >
+        ❤️<em>'."</em>
+      </p>
+      <hr />
+      <p>
+        Later authors have been inspired by this tradition to create lists that
+        associate a birthday flower with each day of the year.
+      </p>
+    </div>
+
+    <div class="quiz">
+      <h2>
+        Wanna do a Gift?
+        <br />
+        🌸🌺🌼
+      </h2>
+      <p class="result"></p>
+
+      <button class="buy-button">Send some Flowers 💐</button>
+    </div>
+    <footer>
+      Created by
+      <a href="https://www.linkedin.com/in/gloriatoth/" target="_blank"
+        >Gloria</a
+      >
+    </footer>
+
+    <script>
+      function buy() {
+        let userName = prompt("What's your name?");
+        let userGift = prompt("Who would you like to send flowers to?");
+        let userContinent = prompt(
+          "In which continent does the recipient live?"
+        );
+        userContinent = userContinent.toLowerCase();
+        userContinent = userContinent.trim();
+        userContinent = userContinent.replace("europa", "europe");
+        let resultText = document.querySelector(".result");
+        if (userContinent === "europe") {
+          resultText.innerHTML =
+            "Hi " +
+            userName +
+            "! " +
+            userGift +
+            " will receive your flowers 🥰";
+          findFlower.innerHTML = "Send other Flowers 🐝";
+        } else {
+          resultText.innerHTML =
+            "Sorry " +
+            userName +
+            ", you can not send flowers to " +
+            userGift +
+            " 😢";
+          findFlower.innerHTML = "Send flowers to someone else 💝";
+          alert("The recipient must live in Europe.");
+        }
+      }
+
+      let findFlower = document.querySelector(".buy-button");
+      findFlower.addEventListener("click", buy);
+    </script>
+  </body>
+</html>
